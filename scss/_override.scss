@@ -1,0 +1,182 @@
+html {
+  .bg-success {
+    color: white !important;
+  }
+}
+
+.v-row + .v-row {
+  margin-top: 0px;
+}
+
+.v-divider {
+  opacity: 1;
+  border-color: rgba(var(--v-theme-borderLight), 0.36);
+}
+
+.v-theme--LightTheme,
+.v-theme--LightBlueTheme,
+.v-theme--DarkTheme,
+.v-theme--DarkBlueTheme {
+  :is(.v-data-table, .v-data-table-server, .v-table) {
+    .v-table__wrapper {
+      border: 1px solid rgba(var(--v-theme-on-surface), 0.18);
+    }
+
+    tbody > tr > td,
+    tbody > tr > th {
+      border-bottom: 1px solid rgba(var(--v-theme-on-surface), 0.18) !important;
+    }
+
+    tbody > tr:hover,
+    tbody > tr:hover > td {
+      background-color: rgba(var(--v-theme-primary), 0.18) !important;
+    }
+  }
+}
+
+.v-selection-control {
+  flex: unset;
+}
+
+.customizer-btn .icon {
+  animation: progress-circular-rotate 1.4s linear infinite;
+  transform-origin: center center;
+  transition: all 0.2s ease-in-out;
+}
+
+.no-spacer {
+  .v-list-item__spacer {
+    display: none !important;
+  }
+}
+
+@keyframes progress-circular-rotate {
+  100% {
+    transform: rotate(270deg);
+  }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(var(--v-theme-lightprimary), 0.36);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--v-theme-darkprimary));
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--v-theme-darksecondary));
+}
+
+:deep(.v-slider-thumb__label) {
+  background-color: rgb(var(--v-theme-darkprimary));
+}
+:deep(.v-slider-thumb__label::before) {
+  color: rgb(var(--v-theme-darkprimary));
+}
+
+.item-title {
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: rgb(var(--v-theme-on-surface-variant));
+  margin: 0px 16px 8px;
+}
+
+.item-desc {
+  font-size: 16px;
+  color: rgb(var(--v-theme-on-surface));
+  margin: 0px 16px 24px;
+}
+
+.v-list-item-title {
+  color: rgb(var(--v-theme-on-surface)) !important;
+}
+
+.v-list-item-subtitle {
+  color: rgb(var(--v-theme-on-surface-variant)) !important;
+  opacity: 1 !important;
+}
+
+/* 
+   Broad override to remove selection lines, borders, and focus outlines 
+   from navigation items (including v-list-item--one-line variants)
+*/
+.v-list-item--active, .v-list-item:focus, .v-list-item--one-line {
+  &::before, &::after {
+    display: none !important;
+  }
+  
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  border-inline-start: none !important; /* Removes vertical bars on the left */
+
+  .v-list-item__prepend, .v-icon, i, .v-list-item__overlay, .iconClass, svg {
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+}
+
+/* Specifically targeting the Tabler Icon component to remove click/focus borders */
+.iconClass, .iconClass svg, .v-list-item__prepend svg {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent; /* Removes the blue/dark flash on mobile clicks */
+}
+
+/* 
+   Global Tooltip Defaults: 
+   Sets Primary background and On-Primary text color for all v-tooltips.
+   The :not([class*="bg-"]) guard ensures specific colored tooltips remain unaffected.
+*/
+.v-tooltip > .v-overlay__content:not([class*="bg-"]) {
+  background: rgb(var(--v-theme-primary)) !important;
+  color: rgb(var(--v-theme-on-primary)) !important;
+  font-weight: 500;
+  transition: opacity 0.2s ease-in-out;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+}
+
+a, .router-link {
+  color: rgb(var(--v-theme-link));
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover, .router-link-active {
+  color: rgb(var(--v-theme-link-active));
+  // text-decoration: underline;
+}
+
+.v-tabs--align-tabs-title:not(.v-slide-group--has-affixes) .v-tab:first-child {
+    margin-inline-start: 4px; // 42px; // (default)
+}
+
+/* Active links */
+// .router-link-active,
+// .router-link-exact-active {
+//   color: rgb(var(--v-theme-primary)) !important;
+// }
+
+// /* Base link color (optional) */
+// a {
+//   color: rgb(var(--v-theme-primary));
+// }
+
+// .v-toolbar, .v-toolbar__content {
+//   // height: 54px;
+//   padding: 0px 0px;
+// }
